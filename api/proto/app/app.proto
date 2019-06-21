@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package app;
+
+message Ping {
+    string Content              =1;//内容体
+}
+message Pong {
+    string PingContent          =1;//ping content
+    string Content              =2;//ping content
+}
+
+service AppService {
+
+    // start ping
+    rpc StartPing(Ping) returns (Pong){}
+}
